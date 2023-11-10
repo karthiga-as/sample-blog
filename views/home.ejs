@@ -1,0 +1,13 @@
+<%-include("partials/header.ejs")  %>
+<h1>Home</h1>
+<p><%=homeStartingContent  %></p>
+<% posts.forEach(post=> { %>
+    <li>
+       <h1><%=post.title  %> </h1>
+       <p><%= ((post.content.length > 100)? post.content.slice(0, 99) + '…' : post.content )%>
+       <a href="/posts/<%=post._id%>" >Read More</a></p>
+    </li>
+<% }) %>
+
+
+<%-include("partials/footer.ejs")  %>
